@@ -3,7 +3,6 @@
 oauth=`cat oauth.txt`
 
 playlist=$1
-cut -d: -f4 <<<"${playlist}"
 
 playlist_user=`cut -d: -f3 <<<"${playlist}"`
 playlist_id=`cut -d: -f5 <<<"${playlist}"`

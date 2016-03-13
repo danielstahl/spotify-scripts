@@ -2,10 +2,7 @@
 
 oauth=`cat oauth.txt`
 
-#playlist='spotify:user:spotifyclassical:playlist:6R6151fcIjSMO8Dz0J312G'
 track=$1
-cut -d: -f4 <<<"${track}"
-
 track_id=`cut -d: -f3 <<<"${track}"`
 
 market=$2
