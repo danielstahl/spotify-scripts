@@ -12,4 +12,6 @@ echo "$playlist_user $playlist_id"
 market=$2
 
 curlresult=`curl -X GET "https://api.spotify.com/v1/users/$playlist_user/playlists/$playlist_id?market=$market" -H "Accept: application/json" -H "Authorization: Bearer $oauth"`
-echo "$curlresult" | jq '{"uri" : .uri, "name" : .name, "description" : .description, "image" : .images[0].url}'
+
+echo "$curlresult" | jq '{"uri" : .uri, "name" : .name, "updated" : .tracks.items[0].added_at, "description" : .description, "image" : .images[0].url}'
+
